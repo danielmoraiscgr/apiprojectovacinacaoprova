@@ -93,7 +93,11 @@ namespace ProjectoVacinacao.Controllers
         {         
             _residentes.DeletarResidente(id);
         
-        }    
+        }
+
+      
+        
+        
 
 
         
