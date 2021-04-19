@@ -95,11 +95,38 @@ namespace ProjectoVacinacao.Controllers
         
         }
 
-      
-        
-        
+        [HttpGet]
+        [Route("PesquisarPorNomeCompleto/{nome}")]
+        public Residente PesquisarNome(string nome)
+        {
+            try
+            {
+               return _residentes.PesquisarPorNome(nome);
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
 
 
-        
+        [HttpGet]
+        [Route("PesquisarParteNome/{nome}")]
+        public IEnumerable<Residente> PesquisarParteNome(string nome)
+        {
+            try
+            {
+                return _residentes.PesquisarParteNome(nome);
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+
+
+
+
     }
 }

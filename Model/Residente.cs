@@ -97,5 +97,23 @@ namespace ProjectoVacinacao.Model
             return true; 
 
         }
+
+        public Residente PesquisarPorNome(string nome)
+        {
+            var listaResidentes = this.ListarResidentes();
+
+            var residente = listaResidentes.Where(r => r.DNomeCompleto == nome).FirstOrDefault();
+
+            return residente;
+        }
+
+        public IEnumerable<Residente> PesquisarParteNome(string nome)
+        {
+            var listaResidentes = this.ListarResidentes();
+
+            var residentes = listaResidentes.Where(r => r.DNomeCompleto.Contains(nome));
+            
+            return residentes;
+        }
     }
 }
